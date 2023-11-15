@@ -15,6 +15,9 @@ class Constants:
 class WaypointPluginName(Enum):
     PASSTHROUGH = "passthrough"
     SPINNY = "spinny"
+    RVO = "rvo"
+    RVO2 = "rvo2"
+    ORCA = "orca"
 
 
 InputMsg = pedsim_msgs.msg.WaypointPluginDataframe
@@ -74,7 +77,7 @@ class PedsimWaypointGenerator:
             queue_size=1
         )        
 
-        def callback(dataframe: InputMsg):
+        def callback(dataframe:InputMsg):
 
             dataframe_data = InputData(
                 header = dataframe.header,
